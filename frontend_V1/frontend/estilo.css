@@ -1,0 +1,314 @@
+*{
+    
+}
+@font-face{
+    font-family: kronaOne;
+    src: url("KronaOne.ttf");
+}
+body{
+    margin:0;
+    width:100%;
+    height: 40vh;
+    font-family: kronaOne;
+    overflow-x: hidden;
+    background-color: bisque;
+    background-image: url(img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    width: 100%;
+    height: 6em;
+    display: flex;
+    align-items: center;
+}
+.manager{
+    background-color: maroon;
+    align-self: flex-end;
+    margin-left: 3em;
+}
+
+}
+@keyframes tittle{
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+
+}
+
+@keyframes nav{
+    0% {opacity: 0%;}
+    100% {opacity: 80%;}
+
+}
+@keyframes main{
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+
+}
+h1{
+    
+    animation-name: tittle;
+    animation-duration: 6s;
+    font-size: 5em;
+    text-align: center;
+  
+}
+nav{
+    width: 100%;
+    height: 13vh;
+    background-color: rgb(238, 227, 213);
+    opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    animation-name: nav;
+    animation-duration: 6s;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+li{
+    border-radius: 15px;
+    width: 20vw;
+    height: 8.5vh;
+    list-style: none;
+  
+}
+li:hover{
+    border: solid blanchedalmond 2px;
+    background-color:rgb(255, 221, 169) ;
+    opacity: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+
+    
+}
+
+#subMenuList{
+    margin-top: 2em;
+    font-size: 0.6em;
+}
+
+main{
+    width: 100vw;
+    height: 75vh;
+    border: solid blanchedalmond 1px;
+    background-color: rgb(238, 227, 213);
+    opacity: 100%;
+    animation-name: main;
+    animation-duration: 6s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes change{
+    0%{margin-left: 0%;}
+    15%{margin-left: 0%;}
+
+    20%{margin-left: -120%;}
+    35%{margin-left: -120%;}
+
+    40%{margin-left: -230%;}
+    55%{margin-left: -230%;}
+
+    60%{margin-left: -340%;}
+    75%{margin-left: -340%;}
+    
+    80%{margin-left: -450%;}
+    100%{margin-left: -450%;}
+
+
+
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    margin-top: 1em;
+    opacity: 100%;
+}
+
+.slider ul{
+    display: flex; 
+    padding: 0;
+    width: 1000%;
+    animation: change 20s infinite alternate linear;
+}
+
+
+.slider li{
+        width: 100%;
+        list-style: none;
+
+}
+
+.slider img{
+    width: 100%;
+    height: 800%;
+  
+}
+
+
+footer img{
+    margin-left: 2%;
+    margin-top: 0.5%;
+    animation-name: tittle;
+    animation-duration: 6s;
+}
+.footerText{
+    text-align: center;
+    animation-name: tittle;
+    animation-duration: 6s;
+}
+
+.logos{
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 768px){
+
+    h1{
+        font-size: 4em;
+        text-align: center;
+    }
+    
+    li{
+        border-radius: 15px;
+        display: inline-block;
+        width: 18vw;
+        height: 8.5vh;
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        margin-top: 3%;
+        display: flex;
+        justify-content: center;
+        opacity: 100%;
+        font-size: 1.5em;
+    }
+    .menu{
+        font-size: 1em;
+        border-radius: 15px;
+        padding: 0.2em;
+        width: 20vw;
+        height: 8vh;
+        margin-top: 0.2em;
+    }
+    .names{
+        width: 20vw;
+        height: 8vh;
+    }
+    
+    section a{
+        display: flex;
+        justify-content: start;
+        margin-left: 5%;
+    }
+
+    main{
+        width: 70vw;
+        height: 75vh;
+        border: solid blanchedalmond 1px;
+        background-color: rgb(238, 227, 213);
+        opacity: 50%;
+    }
+    
+    
+    
+    section{
+        border: solid blanchedalmond 1px;
+        background-color: rgb(238, 227, 213);
+        opacity: 80%;
+        width: 30vw;
+        height: 75vh;
+    }
+    }
+    
+    @media only screen and (max-width: 425px){
+    
+        h1{
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        li{
+            border-radius: 15px;
+            width: 14vw;
+            height: 3.5vh;
+            margin-left: -2em;
+        
+
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin-top: 3%;
+            display: flex;
+            justify-content: center;
+            font-size: 1em;
+        }
+        nav{
+            width: 110%;
+            height: 13vh;
+            background-color: rgb(238, 227, 213);
+            opacity: 80%;
+            display: flex;
+            flex-direction: column;
+            animation-name: nav;
+            animation-duration: 6s;
+            margin-left: -2em;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-around;
+        }
+    
+    
+        main{
+            width: 70vw;
+            height: 75vh;
+            border: solid blanchedalmond 1px;
+            background-color: rgb(238, 227, 213);
+            opacity: 50%;
+        }
+        
+        
+        
+        section{
+            border: solid blanchedalmond 1px;
+            background-color: rgb(238, 227, 213);
+            opacity: 80%;
+            width: 30vw;
+            height: 75vh;
+        }
+
+        .menu{
+            font-size: 0.8em;
+            border-radius: 15px;
+            padding: 0.2em;
+            width: 20vw;
+            height: 4vh;
+            margin-top: 0.2em;
+        }
+        .names{
+            width: 20vw;
+            height: 4vh;
+        }
+        #subMenuList{
+            margin-top: 1em;
+            font-size: 1em;
+            margin-left: -1.5em;
+        }
+    
+        
+        
+        }
+    
