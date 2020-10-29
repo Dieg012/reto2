@@ -106,7 +106,7 @@
 
                     <!-- Image Group -->
                     <div class="formulario_group formulario_group_correct" id="image_group">
-                        <label for="image" class="formulario_label">Insert an image</label>
+                        <label for="file" class="formulario_label">Insert an image</label>
                         <div class="formulario_group_input">
                             <input type="file" class="formulario_input" name="file" id="file">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -204,7 +204,10 @@
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $shopCod = $_COOKIE['shopCod'];
             $name = $_POST['productName'];
-        }        
+            $desc = $_POST['description'];
+            $price = $_POST['price'];
+            $stock = $_POST['stock'];
+            $img = $_POST['file'];
     ?>
 </body>
 </html>
