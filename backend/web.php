@@ -16,10 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/shop', function () {
+    return view('shop', compact('App\Http\Controllers\ShopController@shopInfo'));
+});
+
+//------------------------------------------------------
 Route::get('addProduct', 'addProduct@returnView');
+Route::post('addProduct', 'addProduct@returnView');
 Route::get('info', 'informationController@selectTest');
-Route::get('select','ShopController@shopInfo');
+//Route::get('shop','ShopController@shopInfo');
 
 Route::get('check','ShopController@checkIfExists');
 
 Route::get('insertShop','ShopController@fillShop');
+

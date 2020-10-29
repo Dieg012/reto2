@@ -7,28 +7,28 @@
 </head>
 <body>
     <div id="insertForm">
-        <form action="product" method="POST">
+        <form id='form' action="addProduct" method="POST">
             <ul>
                 <li>
                     <h4 class="formh4">Shop name</h4>
-                    <input type="checkbox" id="ZAR" name="Zara" value="Zara">
+                    <input type="Radio" id="ZAR" name="radio" value="Zara">
                     <label for="Zara">Zara</label>  
-                    <input type="checkbox" id="NIK" name="Nike" value="Nike">
+                    <input type="Radio" id="NIK" name="radio" value="Nike">
                     <label for="Nike">Nike</label>  
-                    <input type="checkbox" id="BTW" name="BTwin" value="BTwin">
+                    <input type="Radio" id="BTW" name="radio" value="BTwin">
                     <label for="BTwin">BTwin</label>
                 </li>
                 <li> 
                     <h4>Product name</h4> 
-                    <input type="text" name='name'>
+                    <input id="productName" type="text" name='name'>
                 </li>
                 <li>
                     <h4>Description</h4> 
-                    <textarea></textarea>
+                    <textarea id="desc"></textarea>
                 </li>
                 <li>
                     <h4>Price</h4> 
-                    <input type="text">
+                    <input type="number" min="0">
                 </li>
                 <li>
                     <h4>Stock</h4>
@@ -36,11 +36,7 @@
                 </li>
                 <li>
                     <h4>Image</h4> 
-                    <input type="file">
-                </li>
-                <li>
-                    <h4>Price</h4> 
-                    <input type="text">
+                    <input id="file" type="file">
                 </li>
                 <li>
                     <input id="send" type="submit" value="Add Product">
@@ -48,11 +44,88 @@
             </ul>
         </form>
     </div>
+    <script>
+        function addListeners() {
+            let radios = document.getElementsByName("radio");
+            for(let i=0; i<radios.length; i++) {
+                radios[i].addEventListener('click',getID);
+            }
+            let form = document.getElementById('form');
+            form.addEventListener('submit', validateForm);
+        }
+        
+        //validate form fields
+        function validateForm() {
+            emptySpaces();
+        }
+        function emptySpaces() {
+            if(radiosCheckedOrNot() && fileValidOrNot()) {
+                let inputs = document.getElementsByTagName('input');
+                let finished = false;
+                for(let i=0; i<inputs.length && finished === false; i++) {
+                    if(inputs[i].value === '') {
+                        finished = true;
+                        alertMsg();
+                    }
+                }
+            }
+            else {
+                alertMsg();
+            }
+        }
+        function radiosCheckedOrNot() {
+            let checked = false;
+            let radios = document.getElementsByName("radio");
+            for(let i=0; i<radios.length && checked === false; i++) {
+                if(radios[i].checked === true) {
+                    checked = true;
+                }
+            }
+            return checked;
+        }
+        function fileValidOrNot() {
+            let valid = false;
+            let file = document.getElementById("file").value;
+            let validExt = ['png', 'jpeg', 'jpg'];
+            let extension = file.split('.').pop();
+            extension = extension.toLowerCase();
+            if(file.length !== 0) {
+                for(let i=0; i<validExt.length && valid === false; i++) {
+                    if(extension === validExt[i]) {
+                        valid = true;
+                    }
+                }
+            }
+            return valid;
+        }
+        function alertMsg() {
+            let msg = "One of the fields is empty.";
+            alert(msg);
+        }
+
+        //Set shopID
+        function getID() {
+            let checkedID = checkedRadio();
+            document.cookie = 'shopCod='+checkedID;
+        }
+        function checkedRadio() {
+            let radios = document.getElementsByName("radio");
+            let checkedID = '';
+            for(let i=0; i<radios.length; i++) {
+                if(radios[i].checked === true) {
+                    checkedID = radios[i].id;
+                }
+            }
+            return checkedID;
+        }
+
+        addListeners();
+    </script>
     <?php
         use App\Controllers\addProduct;
-        if($_SERVER['METHOD_REQUEST']) {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $shopCod = $_COOKIE['shopCod'];
             $name = $_POST['name'];
-            addProduct::
         }        
     ?>
 </body>
