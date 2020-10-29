@@ -1,6 +1,8 @@
 <?php
     namespace App\Models;
 
+    use DB;
+
     use Illuminate\Database\Eloquent\Model;
 
     use Illuminate\Support\Facades\DB;
@@ -8,67 +10,56 @@
     class Product extends Model
     {   
         private $id;
+        private $codShop;
         private $name;
         private $description;
-        private $imgPath;
+        private $price
         private $stock;
-        private $link;
+        private $imgPath;
+        
 
-        function __construct($name, $description, $imgPath, $stock, $link)
+        function __construct($codShop, $name, $description, $price, $stock, $imgPath)
         {
+            $this->codShop;
             $this->name = $name;
             $this->description = $description;
-            $this->imgPath = $imgPath;
+            $this->price = $price;
             $this->stock = $stock;
-            $this->link = $link;
+            $this->imgPath = $imgPath;
         }
 
         //Getters
-        public function getId() {
-            return $this->id;
+        public function getCodShop() {
+            return $codShop;
         }
-        public function getName() 
-        {
-            return $this->name;
+        public function getName() {
+            return $name;
         }
-        public function getDesc() 
-        {
-            return $this->description;
+        public function getDescription() {
+            return $description;
         }
-        public function getImgPath() 
-        {
-            return $this->imgPath;
+        public function getPrice() {
+            return $price;
         }
-        public function getStock()
-        {
-            return $this->stock;
+        public function getStock() {
+            return $stock;
         }
-        function getLink() 
-        {
-            return $this->link;
-        }
-
-        //Product display methods
-        public function print()
-        {
-            
+        public function getImgPath() {
+            return $imgPath;
         }
 
         //Product table management methods
         public function addProductToDB()
         {
-
             $array;
-            $array['cod_shop'] = 'ZAR';
-            $array['nombre'] = $this->getName();
-            $array['descripcion'] = $this->getDesc();
-            $array['imagen'] = $this->getImgPath();
-            $array['link'] = $this->getLink();
-            $array['cantidad'] = $this->getStock();
+            $array['cod_shop'] = $this->getCodShop();
+            $array['name'] = $this->getName();
+            $array['description'] = $this->getDesc();
+            $array['price'] = $this->getPrice();
+            $array['stock'] = $this->getStock();
+            $array['imgpath'] = $this->getImgPath();
 
             DB::table('products')->insert($array);                                              
-
-            //command to insert into database
         }
         public function deleteProductFromDB()
         {

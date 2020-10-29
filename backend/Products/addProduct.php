@@ -10,7 +10,7 @@ class addProduct extends Controller
     public static function returnView() {
         return view('addProduct');
     }
-    public static function createObjectFromForm($name) {
-        //$product = new Product(23, 'ZAR')
+    public static function createObjectFromForm(Request $request) {
+        $product = new Product($request);
     }
 }
