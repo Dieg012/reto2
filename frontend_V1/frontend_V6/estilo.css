@@ -1,0 +1,417 @@
+*{
+    
+}
+@font-face{
+    font-family: kronaOne;
+    src: url("KronaOne.ttf");
+}
+body{
+    margin:0;
+    width:100%;
+    /*height: 40vh;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    /*background-color: bisque;*/
+    /*background-image: url(img/fondo.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+h1{
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    font-size: 4em;
+    text-align: center;
+    letter-spacing: -4px;
+    margin:0; font-family: kronaOne;
+    padding:10px 20px;
+    /*color:#0f4a7f;*/
+}
+header div{
+    
+    display:flex;
+    align-items: center;
+    padding:0 20px;
+}
+
+header div:hover{
+    background: #f4b894;
+}
+header img{
+
+    width:30px;
+    margin-right:0.5em;
+}
+header h2{
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+ @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+nav{
+    width: 100%;
+    background-color: rgb(238, 227, 213);
+    display: flex;
+    animation-name: nav;
+    animation-duration: 6s;
+    background:#77a9ea;
+}
+nav ul{
+    display: flex;
+    width:100%;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+}
+nav ul li{
+    width: 33.3%;
+    list-style: none;
+  
+}
+nav ul li:hover{
+    background:#618bbe;
+}
+a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color:#000000;
+    padding:0.8em;
+
+    
+}
+
+#subMenuList{
+    margin-top: 2em;
+    font-size: 0.6em;
+}
+
+main{
+    height: calc(100vh - 189px);
+    border: solid blanchedalmond 1px;
+    background-color: rgb(238, 227, 213);
+    opacity: 100%;
+    animation-name: main;
+    animation-duration: 6s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@keyframes change{
+    0%{margin-left: 0%;}
+    10%{margin-left: 0%;}
+
+    15%{margin-left: -120%;}
+    25%{margin-left: -120%;}
+
+    30%{margin-left: -230%;}
+    40%{margin-left: -230%;}
+
+    45%{margin-left: -340%;}
+    55%{margin-left: -340%;}
+    
+    60%{margin-left: -450%;}
+    70%{margin-left: -450%;}
+
+    75%{margin-left: -560%;}
+    85%{margin-left: -560%;}
+    
+    90%{margin-left: -670%;}
+    100%{margin-left: -670%;}
+
+}
+.slider{
+    width: 100%;
+    margin: auto;
+}
+
+.slider ul{
+    display: flex; 
+    padding: 0;
+    margin:0;
+    width: 1000%;
+    animation: change 20s infinite alternate linear;
+}
+.slider li{
+        width: 100%;
+        list-style: none;
+        height: calc(100vh - 189px);
+        display: flex;
+        width:100%;
+}
+
+.slider img{
+    object-fit: cover;
+    object-position: center center;
+    min-height: 100%;
+    width: 100%;
+}
+
+
+
+
+footer{
+    background-color: #84898c;
+    padding: 20px;
+}
+footer img{
+    width: 3em;
+    margin-left: 2%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.footerText{
+    text-align: center;
+    animation-duration: 6s;
+}
+
+.logos{
+    
+    display: flex;
+    justify-content: center;
+}
+
+/* ZARA*/
+
+.mainZara{
+    height: 100%;
+}
+main h3{
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin-left: 30px;
+ }
+.boxShop{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 35px;
+ 
+}
+
+.gridZara {
+    display: grid;
+    grid-row-gap: 1em;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    padding: 2em;
+}
+
+.grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footerZara{
+    background-color:#A48E80;
+    padding: 20px;
+}
+#carrito{
+    width: 2em;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+
+/*MANAGER*/
+#h1Manager{
+    background-color: #618bbe;
+}
+#h1Manager h1{
+    color: white;
+}
+.managerSection{
+    width: 20%;
+    padding: 10px;
+    background-color:#B5C7D3 ;
+    height: 100%;
+}
+
+.managerSection ul{
+    width: 100%;
+ }
+
+.managerList{
+    display: inline-block;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 20px;
+    margin-left: -20px;
+    
+    
+
+}
+.managerSection ul li:hover{
+    background-color:#F2D6AE;
+    width: 70%;
+
+  
+}
+.mainManager{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    
+}
+.footerManager{
+    background-color: #0F4C82;
+}
+#Form h3{
+    margin-left: 30;
+    font-weight: bold;
+    font-size: 2em;
+}
+#Form{
+    width: 100%;
+    text-decoration: none;
+}
+#insertForm{
+ 
+    margin-left: 30px;
+    
+}  
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    gap: 20px;
+
+}
+
+.formulario_label{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario_group_input{
+    position: relative;
+
+}
+.formulario_input{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+.formulario_input:focus{
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+
+}
+.formulario_input_error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario_input_error-active{
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    z-index: 100;
+    width: 15px;
+    height: auto;
+    opacity: 0;
+}
+
+.formulario_group_sendButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.formulario_button{
+    background-color: black;
+    width: 30%;
+    height: 45px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    transition: .1s ease all;
+}
+.formulario_group_correct .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario_group_incorrect .formulario_label {
+	color: #bb2929;
+}
+
+.formulario_group_incorrect .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario_group_incorrect .formulario_input {
+	border: 3px solid #bb2929;
+}
+
+
+@media only screen and (max-width: 768px){
+    h1{
+        font-size: 2em;
+        padding:20px;
+    }
+    
+    main, .slider li {
+        height: calc(100vh - 169px);
+    }
+
+}
+   
+@media only screen and (max-width: 425px){
+    
+        h1{
+            font-size: 2em;
+            text-align: center;
+        }
+        header h2{
+            display:none;
+        }
+        header img{
+            margin:0;
+        }
+        
+        }
+    

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Manager</title>
+</head>
+<body>
+    <header  id="h1Manager">
+        <h1>Manager Area</h1>
+        <div>
+            <img src="img/Logos/casa.png" />
+            <h2>Home</h2>
+        </div>
+    </header>
+    <main class="mainManager">    
+        <section class="managerSection">
+            <ul>
+                <li class="managerList" id="insert">Insert a new Product</li>
+                <li class="managerList" id="update">Update a Product</li>
+                <li class="managerList" id="delete">Detele a Product</li>
+            </ul>
+        </section>
+        <div id="Form">
+        <h3>Insert Product Form</h3>
+            <div id="insertForm">
+                <form action="" class="formulario" id="formulario">
+                    <!--Shop Group -->
+                    
+                    <div class="formulario_group " id="shop_group">
+                        <label for="name" class="formulario_label">Shop name</label>
+                        <div class="formulario_group_input">
+                            <label for="Zara">Zara</label>  
+                            <input type="checkbox" class="formulario_input_checbox" id="Zara" name="Zara" value="Zara">
+                            <label for="Nike">Nike</label>  
+                            <input type="checkbox"  class="formulario_input_checbox" id="Nike" name="Nike" value="Nike">
+                            <label for="BTwin">BTwin</label>
+                            <input type="checkbox" class="formulario_input_checbox" id="BTwin" name="BTwin" value="BTwin">
+                        </div>
+                        <p class="formulario_input_error">Choose one shop please.</p>
+                    </div>
+
+                    	<!-- Name Group -->
+                    <div class="formulario_group formulario_group_incorrect" id="name_group">
+                        <label for="name" class="formulario_label">Name of the Product</label>
+                        <div class="formulario_group_input">
+                            <input type="text" class="formulario_input" name="name" id="name" placeholder="name">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input_error">Write a name. Minimun 4 digits and maximun 30.</p>
+                    </div>
+
+                       	<!-- Description Group -->
+                    <div class="formulario_group formulario_group_correct" id="description_group">
+                        <label for="description" class="formulario_label">Description of the Product</label>
+                        <div class="formulario_group_input">
+                            <textarea type="text" class="formulario_input" name="description" id="description" placeholder="Write a short description"></textarea>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input_error">Write a name. Minimun 4 digits and maximun 30.</p>
+                    </div>
+
+                    <!-- Price Group -->
+                    <div class="formulario_group formulario_group_correct" id="price_group">
+                        <label for="price" class="formulario_label">Price per unit</label>
+                        <div class="formulario_group_input">
+                            <input type="text" class="formulario_input" name="price" id="price" placeholder="Write a price">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input_error">Insert a price.</p>
+                    </div>
+
+                        <!-- Stock Group -->
+                    <div class="formulario_group formulario_group_correct" id="stock_group">
+                        <label for="stock" class="formulario_label">New Stock</label>
+                        <div class="formulario_group_input">
+                            <input type="number" class="formulario_input" name="stock" id="stock">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input_error">Insert a stock.</p>
+                    </div>
+
+                    <!-- Image Group -->
+                    <div class="formulario_group formulario_group_correct" id="image_group">
+                        <label for="image" class="formulario_label">Insert an image</label>
+                        <div class="formulario_group_input">
+                            <input type="file" class="formulario_input" name="image" id="image">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input_error">Insert an image.</p>
+                    </div>
+
+                    <div class="formulario_group formulario_group_sendButton">
+                        <button type="submit" class="formulario_button">Send</button>
+                        <p class="formulario_check_msg" id="formulario_check_msg">Form send</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <footer class="footerManager">
+        <div class="logos">
+            <img src="img/Logos/facebook.png" alt="facebook">
+            <img src="img/Logos/instagram.png" alt="instagram">
+            <img src="img/Logos/twitter.png" alt="twitter">
+        </div>
+        <div class="footerText">
+            <p>Disegned and created by Diego Gómez, Unai Infante and Imanol Luque</p>
+        </div>
+    </footer>
+</body>
+</html>
